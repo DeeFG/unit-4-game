@@ -6,12 +6,13 @@ var ranNum = Math.floor(Math.random() * (40 - 1) + 1);
 //var totalScore = undefined;
 var value = ranNum;
 var totalScore = 0;
+var win = 0;
+var loss = 0;
 
 
 
 
 $(document).ready(function () {
-
 
     $("#ranNum").html(ranNum)
 
@@ -39,12 +40,22 @@ $(document).ready(function () {
         $("#gem4").html(gem4);
     });
 
-  
-    });
 
-  if ( $("#score").text(totalScore) > (ranNum))
-        console.log(" WIN");
-   
+});
+
+if ($("#score").text(totalScore) > (ranNum))
+    console.log(" LOOSE");
+    $(loss++);
+    $(loss).appendTo("#losses");
+
+if ($("#score").text(totalScore) === (ranNum))
+    console.log(" WIN");
+    $(win++);
+    $(win).appendTo("#wins");
+
+
+
+
 
 
 
