@@ -16,11 +16,18 @@ function reset() {
     ranNum = Math.floor(Math.random() * (40 - 1) + 1);
     totalScore = 0;
 
-    var win = 0;
-    var loss = 0; 
+
     $("#ranNum").html(ranNum)
     $("#score").text(totalScore);
-    $(".GEMS").show("");
+    $(".GEMS").html(" ");
+
+
+
+    // $("#gem1").val(gem1).text(gem1); // want to change backto orginal photo
+    // $("#gem2").val(gem2).text(gem2);
+    // $("#gem3").val(gem3).text(gem3);
+    // $("#gem4").val(gem4).text(gem4);
+    
 }
 
 
@@ -29,8 +36,8 @@ function checkScore(){
     if (totalScore === ranNum){ 
         win++;
     $("#wins").html(win);
-    $("message").html("WINNER!!!!!")
-    $(".GEMS").prop("disabled", );
+    alert(" YOU WIN!! ")
+   // $(".GEMS").prop("disabled", );
     
     reset();
 }
@@ -38,19 +45,21 @@ function checkScore(){
     else if (totalScore > ranNum) {
         loss++;
     $("#losses").html(loss);
-    $("message").text("YOU LOOSE!!!!!")
-    alert("LOOOSSS!");
-    $(".GEMS").prop("disabled", true);
+
+    alert("You LOOSE!");
+   // $(".GEMS").prop("disabled", true);
     reset();
-    
     }
 }
 
-
+// function getBtnValue(){
+//     var stringValue = $(this).val();
+//     return parseInt(stringValue);
+// }
 
 $(document).ready(function () {
 
-    $("#ranNum").html(ranNum)
+    $("#ranNum").html(ranNum);
     $("#score").text(totalScore);
     $("#wins").text(win);
     $("#losses").text(loss);
@@ -59,9 +68,22 @@ $(document).ready(function () {
     $(".reset").click(function () {
         reset()
         $("#message").text("");
-        $(".GEMS").prop("disabled", false);
+       // $(".GEMS").prop("disabled", false);
     });
 
+
+    // $(".GEMS").on("click", function () {
+    //     var value = getBtnValue(this);
+    //     totalScore += value;
+
+    //     $("#score").text(totalScore);
+
+    //     $(this).text(value);
+
+    //     checkScore();
+    // });
+
+});
     $("#gem1").click(function () {
         totalScore += gem1;
         $('#score').text(totalScore);
@@ -90,6 +112,8 @@ $(document).ready(function () {
         checkScore();
     });
 
+    
 
     
-});
+
+
