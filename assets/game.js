@@ -15,19 +15,37 @@ function reset() {
     gem4 = Math.floor(Math.random() * (10 - 1) + 1);
     ranNum = Math.floor(Math.random() * (40 - 1) + 1);
     totalScore = 0;
-    $("#ranNum").html(ranNum)
 
-    $("#gem1").html(gem1); // want to change backto orginal photo
-    $("#gem2").text(gem2);
-    $("#gem3").text(gem3);
-    $("#gem4").text(gem4);
+    var win = 0;
+    var loss = 0; 
+    $("#ranNum").html(ranNum)
     $("#score").text(totalScore);
-   
+    $(".GEMS").show("");
 }
 
-$(".reset").click(function () {
-    reset()
-});
+
+
+function checkScore(){
+    if (totalScore === ranNum){ 
+        win++;
+    $("#wins").html(win);
+    $("message").html("WINNER!!!!!")
+    $(".GEMS").prop("disabled", );
+    
+    reset();
+}
+
+    else if (totalScore > ranNum) {
+        loss++;
+    $("#losses").html(loss);
+    $("message").text("YOU LOOSE!!!!!")
+    alert("LOOOSSS!");
+    $(".GEMS").prop("disabled", true);
+    reset();
+    
+    }
+}
+
 
 
 $(document).ready(function () {
@@ -37,45 +55,41 @@ $(document).ready(function () {
     $("#wins").text(win);
     $("#losses").text(loss);
 
+
+    $(".reset").click(function () {
+        reset()
+        $("#message").text("");
+        $(".GEMS").prop("disabled", false);
+    });
+
     $("#gem1").click(function () {
         totalScore += gem1;
         $('#score').text(totalScore);
         $("#gem1").text(gem1);
+        checkScore();
     })
 
     $("#gem2").click(function () {
         totalScore += gem2;
         $('#score').text(totalScore);
         $("#gem2").text(gem2);
+        checkScore();
     });
 
     $("#gem3").click(function () {
         totalScore += gem3;
         $("#score").text(totalScore);
         $("#gem3").text(gem3);
+        checkScore();
     });
 
     $("#gem4").click(function () {
         totalScore += gem4;
         $("#score").text(totalScore)
         $("#gem4").text(gem4);
+        checkScore();
     });
 
 
-    
-    
-        if (totalScore === ranNum)
-            win++;
-        $("#wins").html(win);
-        alert("Win");
-        reset()
-    
-
-        if (totalScore >= ranNum) {
-            loss++;
-            $("#losses").html(loss);
-            alert("Loose");
-            reset()
-        }
     
 });
