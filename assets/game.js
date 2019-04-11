@@ -17,14 +17,12 @@ function reset() {
     totalScore = 0;
     $("#ranNum").html(ranNum)
 
-    $(".GEMS").html(gem1); // want to change backto orginal set
-
+    $("#gem1").html(gem1); // want to change backto orginal photo
     $("#gem2").text(gem2);
     $("#gem3").text(gem3);
     $("#gem4").text(gem4);
     $("#score").text(totalScore);
-    $("#wins").text(win);
-    $("#losses").text(loss);
+   
 }
 
 $(".reset").click(function () {
@@ -64,23 +62,20 @@ $(document).ready(function () {
     });
 
 
+    
+    
+        if (totalScore === ranNum)
+            win++;
+        $("#wins").html(win);
+        alert("Win");
+        reset()
+    
 
-
-  
-
-        function winner() {
-            if (totalScore === ranNum)
-                win++;
-            $("#wins").html(win);
-            alert("Win");
+        if (totalScore >= ranNum) {
+            loss++;
+            $("#losses").html(loss);
+            alert("Loose");
+            reset()
         }
-
-        function loose() {
-            if (totalScore >= ranNum) {
-                loss++;
-                $("#losses").html(loss);
-                alert("Loose");
-            }
-        }
-
+    
 });
