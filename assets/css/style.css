@@ -10,8 +10,8 @@ h2{
 
 }
 .jumbotron{
-    background:rgb(185, 211, 185);
-    color:rgba(103, 49, 95, 0.598);
+    background: rgb(220, 255, 251) ;
+    color:rgba(63, 34, 59, 0.598);
     font-weight: 200;
 }
 body {
@@ -23,11 +23,11 @@ text-align: center;
 container{
     position: relative;
     text-align: center;
-    color:rgba(103, 49, 95, 0.598);
-    font-weight: 50;
+   color:rgba(63, 34, 59, 0.598);
+    font-weight: 10;
 }
  img{
-  width: 100%;
+  width: auto;
   height: auto;
 }
 
@@ -38,7 +38,10 @@ container{
     opacity:1;
 }
 #score{
+    font-size: 60px;
     color:palevioletred;
+    border-radius: 5px;
+    border-bottom: solid 5px blueviolet;
 
 }
 #wins{
@@ -46,4 +49,7 @@ container{
 }
 #losses{
     color:palevioletred;
+}
+#ranNum {
+    color: blueviolet;
 }

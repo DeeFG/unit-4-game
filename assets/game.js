@@ -9,6 +9,7 @@ var loss = 0;
 
 
 
+
 var elementToClick = document.querySelector(".GEMS");
 var elementToShow = document.querySelector(".element");
 
@@ -36,15 +37,20 @@ function reset() {
     //     $('img').attr("src", "");
     // });
 
-    $("#ranNum").html(ranNum)
+    $(".GEMS").click(function(){
+        $("img").attr("src", "");
+      });
+
+$("#ranNum").html(ranNum)
     $("#score").text(totalScore);
-    showElement();
+   // showElement();
+    //$("img").attr("src")
 
-
-    // $("#gem1").val(gem1).text(gem1); // want to change backto orginal photo
-    // $("#gem2").val(gem2).text(gem2);
-    // $("#gem3").val(gem3).text(gem3);
-    // $("#gem4").val(gem4).text(gem4);
+    $("src").show(); // want to change backto orginal photo
+  
+    $("#gem2").val(gem2).text(gem2);
+    $("#gem3").val(gem3).text(gem3);
+    $("#gem4").val(gem4).text(gem4);
     
     // $("#gem1").val(gem1).text(gem1); // want to change backto orginal photo
     // $("#gem2").val(gem2).text(gem2);
