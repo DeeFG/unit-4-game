@@ -37,3 +37,13 @@ container{
 .element.show{
     opacity:1;
 }
+#score{
+    color:palevioletred;
+
+}
+#wins{
+    color:palevioletred;
+}
+#losses{
+    color:palevioletred;
+}
