@@ -6,7 +6,23 @@ var ranNum = Math.floor(Math.random() * (120 - 19) + 19);
 var totalScore = 0;
 var win = 0;
 var loss = 0;
-var originalImgSrc = $('img').attr('src');
+
+
+
+var elementToClick = document.querySelector(".GEMS");
+var elementToShow = document.querySelector(".element");
+
+if(elementToClick){
+ 	elementToClick.addEventListener("click",showElement)
+}
+
+function showElement(){
+	elementToShow.classList.add("show");
+}
+
+
+
+
 
 function reset() {
 
@@ -16,16 +32,20 @@ function reset() {
     gem4 = Math.floor(Math.random() * (10 - 1) + 1);
     ranNum = Math.floor(Math.random() * (40 - 1) + 1);
     totalScore = 0;
-    $(".GEMS").click(function() {
-        $('img').attr("src", "");
-    });
+    // $(".GEMS").click(function() {
+    //     $('img').attr("src", "");
+    // });
 
     $("#ranNum").html(ranNum)
     $("#score").text(totalScore);
-    $(".GEMS").html(" ");
+    showElement();
 
 
-
+    // $("#gem1").val(gem1).text(gem1); // want to change backto orginal photo
+    // $("#gem2").val(gem2).text(gem2);
+    // $("#gem3").val(gem3).text(gem3);
+    // $("#gem4").val(gem4).text(gem4);
+    
     // $("#gem1").val(gem1).text(gem1); // want to change backto orginal photo
     // $("#gem2").val(gem2).text(gem2);
     // $("#gem3").val(gem3).text(gem3);
@@ -42,6 +62,7 @@ function checkScore(){
     alert(" YOU WIN!! ")
    // $(".GEMS").prop("disabled", );
     reset();
+   
 }
 
     else if (totalScore > ranNum) {
@@ -89,10 +110,7 @@ $(document).ready(function () {
     $("#gem1").click(function () {
         totalScore += gem1;
         $('#score').text(totalScore);
-       // $("#gem1").text(gem1);
-       $("#ballon1").text(gem1);
-        
-            
+       $("#gem1").text(gem1);
         checkScore();
     })
 

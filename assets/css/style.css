@@ -31,4 +31,9 @@ container{
   height: auto;
 }
 
-  
+.element{
+    opacity:0;
+ }
+.element.show{
+    opacity:1;
+}
