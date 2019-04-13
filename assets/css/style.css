@@ -39,7 +39,7 @@ container{
     font-size: 50px;
     color:palevioletred;
     border-radius: 5px;
-    border-bottom: solid 5px blueviolet;
+    border-bottom: solid 5px teal;
 
 }
 #wins{
@@ -49,8 +49,9 @@ container{
     color:palevioletred;
 }
 #ranNum {
-    color: blueviolet;
+    color:teal;
 }
 #ranBox {
-    font-size:50px;
+    font-size:100px;
+    color: teal;
 }
