@@ -18,10 +18,6 @@ function reset() {
     $("#ranNum").html(ranNum);
     $("#score").text(totalScore);
     $("#ranBox").text("");
-    // $("#gem1").val(gem1).text(gem1); //   this?? 
-    // $("#gem2").val(gem2).text(gem2);
-    // $("#gem3").val(gem3).text(gem3);
-    // $("#gem4").val(gem4).text(gem4);
 }
 
 
@@ -58,14 +54,7 @@ $(document).ready(function () {
         $("#message").text("");
     });
 
-    // $(".GEMS").on("click", function () { \\this not working??? 
-    //     var value = getBtnValue(this);
-    //     totalScore += value;
-    //     $("#score").text(totalScore);
-    //     $(this).text(value);
-    //     checkScore();
-    // });
-
+  
 });
 $("#gem1").click(function () {
     totalScore += gem1;
@@ -94,5 +83,6 @@ $("#gem4").click(function () {
     $("#ranBox").text(gem4);
     checkScore();
 });
+
 
 
