@@ -29,13 +29,13 @@ function checkScore() {
     if (totalScore === ranNum) {
         win++;
         $("#wins").html(win);
-        alert(" YOU WIN!! ");
+        alert(" !!!!!CONGRATULATIONS, YOU WIN!!!!!! ");
         reset();
 
     } else if (totalScore > ranNum) {
         loss++;
         $("#losses").html(loss);
-        alert("You LOOSE!");
+        alert("SORRY TRY AGAIN! :-(  ");
         reset();
     }
 }
