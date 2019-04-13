@@ -9,11 +9,11 @@ var loss = 0;
 
 
 function reset() {
-    var gem1 = Math.floor(Math.random() * (12 - 1) + 1);
-    var gem2 = Math.floor(Math.random() * (12 - 1) + 1);
-    var gem3 = Math.floor(Math.random() * (12 - 1) + 1);
-    var gem4 = Math.floor(Math.random() * (12 - 1) + 1);
-    var ranNum = Math.floor(Math.random() * (120 - 19) + 19);
+    gem1 = Math.floor(Math.random() * (12 - 1) + 1);
+    gem2 = Math.floor(Math.random() * (12 - 1) + 1);
+    gem3 = Math.floor(Math.random() * (12 - 1) + 1);
+    gem4 = Math.floor(Math.random() * (12 - 1) + 1);
+    ranNum = Math.floor(Math.random() * (120 - 19) + 19);
     totalScore = 0;
     $("#ranNum").html(ranNum);
     $("#score").text(totalScore);
@@ -29,9 +29,9 @@ function checkScore() {
     if (totalScore === ranNum) {
         win++;
         $("#wins").html(win);
-        alert(" YOU WIN!! ")
-        $("#wins").html(win);
+        alert(" YOU WIN!! ");
         reset();
+
     } else if (totalScore > ranNum) {
         loss++;
         $("#losses").html(loss);
@@ -53,10 +53,10 @@ $(document).ready(function () {
     $("#losses").text(loss);
 
 
-    $(".reset").click(function () {
-        reset()
-        $("#message").text("");
-    });
+    // $(".reset").click(function () {
+    //     reset()
+    //     $("#message").text("");
+    // });
 
     // $(".GEMS").on("click", function () { \\this not working??? 
     //     var value = getBtnValue(this);
@@ -65,6 +65,23 @@ $(document).ready(function () {
     //     $(this).text(value);
     //     checkScore();
     // });
+
+    // var counter = 0;
+    // $(".clickers").click(function () {
+    //     var clickedBtn = $(this);
+    //     var valueInBtn = clickedBtn.attr("value");
+
+    //     if (valueInBtn === "a") {
+    //         counter += 5;
+    //     } else if (valueInBtn === "b") {
+    //         counter += 2;
+    //     } else if (valueInBtn === "c") {
+    //         counter += 1;
+    //     }
+
+    //     $("#counter").text(counter);
+    //     clickedBtn.attr("disabled", true);
+    // })
 
 });
 $("#gem1").click(function () {
